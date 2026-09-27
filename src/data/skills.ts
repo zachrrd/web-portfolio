@@ -1,0 +1,70 @@
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss,
+  SiNodedotjs,
+  SiExpress,
+  SiPhp,
+  SiLaravel,
+  SiPostgresql,
+  SiMysql,
+  SiPrisma,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiFigma,
+} from "react-icons/si";
+import { VscCode } from "react-icons/vsc"; 
+import { IconType } from "react-icons";
+
+export type SkillItem = {
+  name: string;
+  icon: IconType;
+};
+
+export type SkillCategory = {
+  name: string;
+  items: SkillItem[];
+};
+
+export const skills: SkillCategory[] = [
+  {
+    name: "Frontend",
+    items: [
+      { name: "React", icon: SiReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "HTML", icon: SiHtml5 },
+      { name: "CSS", icon: SiCss },
+    ],
+  },
+  {
+    name: "Backend",
+    items: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "REST API", icon: SiNodedotjs }, 
+      { name: "PHP", icon: SiPhp },
+      { name: "Laravel", icon: SiLaravel },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MySQL", icon: SiMysql },
+      { name: "Prisma", icon: SiPrisma },
+    ],
+  },
+  {
+    name: "Tools & Others",
+    items: [
+      { name: "Git", icon: SiGit },
+      { name: "GitHub", icon: SiGithub },
+      { name: "VS Code", icon: VscCode },
+      { name: "Postman", icon: SiPostman },
+      { name: "Figma", icon: SiFigma },
+    ],
+  },
+];
