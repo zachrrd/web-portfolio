@@ -3,15 +3,17 @@
 import { motion, useReducedMotion } from "framer-motion";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { reducedMotionVariants, revealVariants, revealViewport } from "@/lib/motion";
+import { useLanguage } from "@/lib/i18n";
 
 export default function About() {
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useLanguage();
   return (
     <section id="about" className="py-32 px-6">
       <div className="max-w-3xl mx-auto">
         <SectionHeading
-          title="About Me"
-          subtitle="A little about my journey in software development"
+          title={t("aboutTitle")}
+          subtitle={t("aboutSubtitle")}
         />
 
         <motion.div
@@ -19,32 +21,36 @@ export default function About() {
           whileInView="visible"
           variants={shouldReduceMotion ? reducedMotionVariants : revealVariants}
           viewport={revealViewport}
-          className="space-y-6 text-muted-foreground leading-relaxed text-lg"
+          className="space-y-6 text-muted-foreground leading-relaxed text-base sm:text-lg"
         >
+          {t("about").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          {false && <>
           <p>
-            Iam a Software Engineering graduate from SMK Negeri 1 Denpasar
-            with a strong interest in web development and modern software
-            technologies. My journey started with learning programming
-            fundamentals and gradually grew into building real-world
-            applications through school projects, personal projects, and
-            industry experience.
+            I am a Full Stack Developer with an educational background in
+            Software Engineering from SMK Negeri 1 Denpasar (2023–2026). I have
+            hands-on experience building and deploying full-stack web and mobile
+            applications, including a complete Carwash Management System with
+            customer, admin web dashboard, and mobile admin workflows.
           </p>
 
           <p>
-            I enjoy working across the full stack — from creating clean and
-            responsive user interfaces with React and Next.js to developing
-            backend services and REST APIs with Node.js, Express.js, Laravel,
-            and PostgreSQL. I also have hands-on experience with authentication,
-            database integration, and payment gateway implementation.
+            My core technical skills span JavaScript, TypeScript, and PHP, with
+            frontend & mobile development using React.js, React Native, Expo,
+            Vite, Tailwind CSS, and NativeWind. On the backend, I architect
+            REST APIs and services with Node.js, Express.js, and Laravel,
+            leveraging Prisma ORM with PostgreSQL and MySQL databases alongside
+            JWT authentication, Role-Based Access Control (RBAC), and Socket.IO
+            for real-time features.
           </p>
 
           <p>
-            Through internships and hands-on projects, Ive learned that
-            becoming a good developer is not only about writing code, but also
-            about understanding problems, building practical solutions, and
-            continuously improving along the way. Im always excited to learn
-            new technologies and turn ideas into useful digital products.
+            Through practical internship experience at PT. Dumbways Indonesia
+            Teknologi, PT. Bamboomedia Cipta Persada, and PT. Timedoor Indonesia,
+            I have built web/mobile apps, integrated Midtrans payment gateway,
+            developed data-driven web tools with Sencha Ext JS, and performed
+            functional software quality assurance.
           </p>
+          </>}
         </motion.div>
       </div>
     </section>

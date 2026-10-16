@@ -6,9 +6,11 @@ import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
+import { LanguageProvider } from "@/lib/i18n";
 
 export default function Home() {
   return (
+    <LanguageProvider>
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
@@ -19,5 +21,6 @@ export default function Home() {
       <Contact />
       <Footer />
     </main>
+    </LanguageProvider>
   );
 }

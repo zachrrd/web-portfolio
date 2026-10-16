@@ -5,15 +5,17 @@ import SectionHeading from "@/components/shared/SectionHeading";
 import { skills } from "@/data/skills";
 import { Badge } from "@/components/ui/badge";
 import { premiumEase, reducedMotionVariants, revealVariants, revealViewport } from "@/lib/motion";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Skills() {
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useLanguage();
   return (
     <section id="skills" className="py-32 px-6 bg-muted/30">
       <div className="max-w-5xl mx-auto">
         <SectionHeading
-          title="Tech Stack"
-          subtitle="Technologies and tools I work with"
+          title={t("skillsTitle")}
+          subtitle={t("skillsSubtitle")}
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -26,7 +28,7 @@ export default function Skills() {
               viewport={revealViewport}
               transition={{ duration: shouldReduceMotion ? 0.2 : 0.65, ease: premiumEase, delay: shouldReduceMotion ? 0 : index * 0.06 }}
             >
-              <h3 className="font-semibold mb-5 text-lg">{category.name}</h3>
+              <h3 className="font-semibold mb-5 text-lg">{t("skillCategories")[index]}</h3>
 
               <div className="flex flex-wrap gap-2.5">
                 {category.items.map((item) => {

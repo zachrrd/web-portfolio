@@ -4,8 +4,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Zacharia | Fullstack Developer",
-  description: "Portfolio of a passionate fullstack developer",
+  title: "Zacharia Rifqi Dheanova | Full Stack Developer",
+  description:
+    "Portfolio of Zacharia Rifqi Dheanova, a Full Stack Developer specializing in modern web interfaces, RESTful APIs, database engineering, and end-to-end web and mobile applications.",
 };
 
 export default function RootLayout({
@@ -14,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={`${GeistSans.className} antialiased`}>
         <ThemeProvider
           attribute="class"
